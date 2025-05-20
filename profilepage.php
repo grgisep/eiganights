@@ -95,21 +95,33 @@
 		</div>
 	</div>
 	
-	<div id="editModal" style="display:none;" class="modal" action="/eiganights/update_profile.php" method="POST">
-		<div class="modal-content">
-			<span class="close" onclick="document.getElementById('editModal').style.display='none'">&times;</span>
-			<h2 style="color:black">Edit Profile</h2>
-			<form id="profileForm" method="POST" action="/eiganights/update_profile.php">
-				<label style="color:black">Username: 
-					<input type="text" name="username" value="<?php echo $user['username']; ?>" required>
-				</label><br><br>
-				<label style="color:black">Avatar URL: 
-					<input type="text" name="avatar" value="<?php echo $user['avatar']; ?>" required>
-				</label><br><br>
-				<button type="submit">Save</button>
-			</form>
-		</div>
-	</div>
+	<div id="editModal" style="display:none;" class="modal">
+	    <div class="modal-content">
+		    <span class="close" onclick="document.getElementById('editModal').style.display='none'">&times;</span>
+		    <h2 style="color:black">Edit Profile</h2>
+		    <form id="profileForm" method="POST" action="/eiganights/update_profile.php">
+			    <label style="color:black">Username: 
+				    <input type="text" name="username" value="<?php echo $user['username']; ?>" required>
+			    </label><br><br>
+			    <label style="color:black">Avatar URL: 
+				    <input type="text" name="avatar" id="avatarInput" value="<?php echo $user['avatar']; ?>" required oninput="updateAvatarPreview()">
+                </label><br><br>
+			    <!-- 头像预览 -->
+			    <img id="avatarPreview" src="<?php echo $user['avatar']; ?>" alt="Avatar" style="width:100px;height:100px;"><br><br>
+			
+			    <button type="submit">Save</button>
+		    </form>
+	    </div>
+    </div>
+
+<script>
+function updateAvatarPreview() {
+	const input = document.getElementById('avatarInput');
+	const preview = document.getElementById('avatarPreview');
+	preview.src = input.value;
+}
+</script>
+
 	
 	<div class="watchlist">
 			<?php
