@@ -90,15 +90,28 @@
 		.movies {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 20px; /* 卡片间距统一 */
-			justify-content: flex-start; /* 左对齐 */
-			padding: 20px 5%; /* 改用百分比对称间距 */
+			gap: 1vw;
+			padding: 20px 5vw;
 			width: 100%;
-			box-sizing: border-box; /* 修复盒模型 */
+			box-sizing: border-box;
+			justify-content:space-between;
 		}
-		.movie-card {
+		.movies::after {
+			content: "";
+			flex: 1; /* 关键：自动填充剩余空间 */
+			width: calc(200px + 5vw); /* 卡片宽度 + 间隙 */
+			visibility: hidden;
+			height: 0; /* 避免撑高容器 */
+		}
+		.movie-card-profile {
 			width: 200px;
 			flex: 0 0 200px;
+			text-align: center;
+			box-sizing: border-box;	
+		}
+		.movie-card{
+			width: 200px;
+			flex: 0 0 auto;
 			text-align: center;
 			box-sizing: border-box;	
 		  }
