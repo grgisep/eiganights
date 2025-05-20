@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $db_username = "root";
-$db_password = "";
+$db_password = "root";
 $dbname = "cinema-userr";
 
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
