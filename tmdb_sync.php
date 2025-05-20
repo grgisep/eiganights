@@ -17,7 +17,7 @@
 
 	if ($movie_data) {
 		// 把电影数据写入数据库，示例：
-		$stmt = $conn->prepare("REPLACE INTO allfilm (tmdb_id, filmname, introduction, poster, rank) VALUES (?, ?, ?, ?, ?)");
+		$stmt = $conn->prepare("REPLACE INTO allfilm (tmdb_id, filmname, introduction, poster, `rank`) VALUES (?, ?, ?, ?, ?)");
 		$filmname = $movie_data['title'];
 		$introduction = $movie_data['overview'];
 		$poster = "https://image.tmdb.org/t/p/w500" . $movie_data['poster_path'];
