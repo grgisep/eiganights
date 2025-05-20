@@ -38,7 +38,7 @@
 					</a>
 					<p>eiganights</p>
 				</div>
-					<form method="GET" action="/movie_application/searchpage.php">
+					<form method="GET" action="/eiganights/searchpage.php">
 						<div class="search-container">
 							<input type="text" id="search-input" name="query" placeholder="Search" class="search-input" value="<?php echo isset($_GET['query']) ? htmlspecialchars($_GET['query']) : ''; ?>">
 							<button class="button" type="submit">🔍</button>

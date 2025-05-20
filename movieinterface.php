@@ -35,7 +35,7 @@
 				</a>
 				<p>eiganights</p>
 			</div>
-				<form method="GET" action="/movie_application/searchpage.php">
+				<form method="GET" action="/eiganights/searchpage.php">
 					<div class="search-container">
 						<input type="text" id="search-input" name="query" placeholder="Search" class="search-input" value="<?php echo isset($_GET['query']) ? htmlspecialchars($_GET['query']) : ''; ?>">
 						<button class="button" type="submit">🔍</button>
@@ -55,12 +55,12 @@
 			<h3 class="movie-interface font">Introduction：<?php echo htmlspecialchars($film['introduction']); ?></p>
 			
 			<div class="left-header">
-				<form method="POST" action="/movie_application/add_to_watchlist.php">	
+				<form method="POST" action="/eiganights/add_to_watchlist.php">	
 					<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
 					<input type="hidden" name="user_id" value="1"> 
 					<button type="submit">add to watchlist</button>
 				</form>
-				<form method="POST" action="/movie_application/delete_watchlist.php">
+				<form method="POST" action="/eiganights/delete_watchlist.php">
 					<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
 					<input type="hidden" name="user_id" value="1">
 					<button type="submit">remove from watchlist</button>
@@ -77,7 +77,7 @@
 
 			<div>
 				<h3>Post a comment</h3>
-				<form method="POST" action="/movie_application/add_comment.php">
+				<form method="POST" action="/eiganights/add_comment.php">
 					<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
 					<input type="hidden" name="user_id" value="1"> 
 					Segement：<input type="text" name="segment" required><br><br>

@@ -63,7 +63,7 @@
 			</a>
 			<p>eiganights</p>
 		</div>
-			<form method="GET" action="/movie_application/searchpage.php">
+			<form method="GET" action="/eiganights/searchpage.php">
 				<div class="search-container">
 					<input type="text" id="search-input" name="query" placeholder="Search" class="search-input" value="<?php echo isset($_GET['query']) ? htmlspecialchars($_GET['query']) : ''; ?>">
 					<button class="button" type="submit">🔍</button>
@@ -95,11 +95,11 @@
 		</div>
 	</div>
 	
-	<div id="editModal" style="display:none;" class="modal" action="/movie_application/update_profile.php" method="POST">
+	<div id="editModal" style="display:none;" class="modal" action="/eiganights/update_profile.php" method="POST">
 		<div class="modal-content">
 			<span class="close" onclick="document.getElementById('editModal').style.display='none'">&times;</span>
 			<h2 style="color:black">Edit Profile</h2>
-			<form id="profileForm" method="POST" action="/movie_application/update_profile.php">
+			<form id="profileForm" method="POST" action="/eiganights/update_profile.php">
 				<label style="color:black">Username: 
 					<input type="text" name="username" value="<?php echo $user['username']; ?>" required>
 				</label><br><br>
