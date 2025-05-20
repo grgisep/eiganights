@@ -33,12 +33,12 @@
 		<body>
 			<div class="header">
 				<div class="left-header">
-					<a href="qq.php">
+					<a href="profilepage.php">
 						<img src="https://pic.52112.com/180704/EPS-180704_297/MApbjeCZ6z_small.jpg" alt="Logo" class="logo">
 					</a>
 					<p>eiganights</p>
 				</div>
-					<form method="GET" action="/movie_application/qq1.php">
+					<form method="GET" action="/movie_application/searchpage.php">
 						<div class="search-container">
 							<input type="text" id="search-input" name="query" placeholder="Search" class="search-input" value="<?php echo isset($_GET['query']) ? htmlspecialchars($_GET['query']) : ''; ?>">
 							<button class="button" type="submit">🔍</button>
