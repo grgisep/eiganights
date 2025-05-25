@@ -11,6 +11,15 @@ nbproject/
 Thumbs.db
 Desktop.ini
 
+
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
 # Composer dependencies (if you were using Composer)
 /vendor/
 composer.lock
