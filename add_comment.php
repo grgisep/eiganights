@@ -1,6 +1,6 @@
 <?php
 // 数据库连接
-$conn = new mysqli("localhost", "root", "root", "cinema-userr");
+$conn = new mysqli("localhost", "root", "", "cinema-userr");
 
 // 获取并验证数据
 $film_id = isset($_POST['film_id']) ? intval($_POST['film_id']) : 0;
