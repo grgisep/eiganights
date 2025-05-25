@@ -193,3 +193,8 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+
+		.link {
+			text-decoration:none;
+			color:white;
+		}

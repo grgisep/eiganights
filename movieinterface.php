@@ -1,6 +1,6 @@
 	<?php
 	// 数据库连接
-	$conn = new mysqli("localhost", "root", "root", "cinema-userr");
+	$conn = new mysqli("localhost", "root", "", "cinema-userr");
 
 	$film_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 	$sql = "SELECT * FROM allfilm WHERE id = ?";

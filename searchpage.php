@@ -2,7 +2,7 @@
 		<?php
 		$servername = "localhost";
 		$username = "root";
-		$password = "root";
+		$password = "";
 		$dbname = "cinema-userr";
 
 		// 创建连接

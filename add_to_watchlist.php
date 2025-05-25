@@ -1,6 +1,6 @@
 <?php
 // 数据库连接
-$conn = new mysqli("localhost", "root", "root", "cinema-userr");
+$conn = new mysqli("localhost", "root", "", "cinema-userr");
 
 // 获取表单传来的 user_id 和 film_id
 $user_id = isset($_POST['user_id']) ? intval($_POST['user_id']) : 0;
