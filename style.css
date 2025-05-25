@@ -134,6 +134,128 @@
             padding: 15px;
             border-radius: 10px;
         }
+		/* 新增/修改的CSS */
+		.movie-interface {
+			display: grid;
+			grid-template-columns: 220px 1fr; /* 固定海报宽度 + 弹性区域 */
+			gap: 30px;
+			padding: 30px 5vw;
+			background: #2a2a2a;
+			border-radius: 12px;
+			margin: 20px 5vw;
+		}
+
+		/* 海报区域 */
+		.movie-interface > div:first-child {
+			position: relative;
+		}
+
+		.movie-interface img {
+			width: 200px;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+		}
+
+		.movie-interface > div:first-child {
+			text-align: center;
+		}
+
+		.movie-interface > div:first-child p {
+			text-align: center;
+			background: rgba(0,0,0,0.7);
+			padding: 10px;
+			border-radius: 10px;
+			margin: 10px auto;	
+			font-size: 1em;
+			display: inline-block;
+		}
+
+		/* 简介区域 */
+		.movie-interface > div:nth-child(2) {
+			display: flex;	
+			flex-direction: column;
+			gap: 25px;
+		}
+
+		.movie-interface h3.font {
+			font-size: 1.4em;
+			line-height: 1.6;
+			margin: 0;
+			color: #ddd;
+			background: #333;
+			padding: 20px;
+			border-radius: 8px;
+		}
+		.movie-intro-box {
+			background: #333;
+			padding: 20px;
+			border-radius: 8px;
+			color: #ddd;
+		}
+
+		.movie-intro-box h3 {
+			margin: 0 0 10px 0;
+			font-size: 1.3em;
+		}
+
+		.movie-intro-box p {
+			margin: 0;
+			font-size: 1.1em;
+			line-height: 1.6;
+			word-break: break-word;
+			color: #ddd;
+		}
+
+		/* 按钮组 */
+		.left-header {
+			display: flex;
+			gap: 15px;
+			margin-top: auto;
+		}
+
+		.left-header form {
+			flex: 1;
+		}
+
+		.left-header button {
+			width: 100%;
+			padding: 12px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			transition: transform 0.2s;
+		}
+
+		.left-header button:first-child {
+			background: #3399ff;
+			color: white;
+		}
+
+		.left-header button:last-child {
+			background: #ff4d4d;
+			color: white;
+		}
+
+		.left-header button:hover {
+			transform: translateY(-2px);
+		}
+
+		/* 响应式调整 */
+		@media (max-width: 768px) {
+			.movie-interface {
+				grid-template-columns: 1fr;
+			}
+			
+			.movie-interface > div:first-child {
+				text-align: center;
+			}
+			
+			.movie-interface img {
+				margin: 0 auto;
+			}
+		}
         .footer-logo {
 			width: 20px;
 			height: 20px;
@@ -143,8 +265,10 @@
 			margin-right: 10px;
         }
 		.page-footer {
+			background-color: #111; /* 你喜欢的背景色 */
+			color: #fff;
 			padding: 20px 5vw;
-			margin-top: 40px;
+			margin-top: auto; /* 自动推到最底部 */
 			border-top: 1px solid #333;
 			text-align: left;
 		}

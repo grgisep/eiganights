@@ -48,25 +48,34 @@
 			</div>
 		</div> 
 		
-		<div style="padding:10px 5vw">
-			<h1><?php echo htmlspecialchars($film['filmname']); ?></h1>
-			<img src="<?php echo htmlspecialchars($film['poster']); ?>" width="200">
-			<p class="movie-interface font">⭐：<?php echo htmlspecialchars($film['rank']); ?></p>
-			<h3 class="movie-interface font">Introduction：<?php echo htmlspecialchars($film['introduction']); ?></p>
-			
-			<div class="left-header">
-				<form method="POST" action="/eiganights/add_to_watchlist.php">	
-					<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
-					<input type="hidden" name="user_id" value="1"> 
-					<button type="submit">add to watchlist</button>
-				</form>
-				<form method="POST" action="/eiganights/delete_watchlist.php">
-					<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
-					<input type="hidden" name="user_id" value="1">
-					<button type="submit">remove from watchlist</button>
-				</form>
+<!-- 保持原有HTML结构不变 -->
+		<div class="movie-interface">
+			<div>
+				<h1><?php echo htmlspecialchars($film['filmname']); ?></h1>
+				<img src="<?php echo htmlspecialchars($film['poster']); ?>" width="200">
+				<p class="movie-interface font">⭐：<?php echo htmlspecialchars($film['rank']); ?></p>
 			</div>
-				
+			<div>    
+				<div class="movie-intro-box">
+					<h3>Introduction：</h3>
+					<p><?php echo htmlspecialchars($film['introduction']); ?></p>
+				</div>
+				<div class="left-header">
+					<form method="POST" action="/eiganights/add_to_watchlist.php">    
+						<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
+						<input type="hidden" name="user_id" value="1"> 
+						<button type="submit">add to watchlist</button>
+					</form>
+					<form method="POST" action="/eiganights/delete_watchlist.php">
+						<input type="hidden" name="film_id" value="<?php echo $film_id; ?>">
+						<input type="hidden" name="user_id" value="1">
+						<button type="submit">remove from watchlist</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div style="padding:10px 5vw">
 			<h2>comments</h2>
 			<?php while($row = $comments->fetch_assoc()): ?>
 				<div>
