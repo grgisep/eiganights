@@ -8,10 +8,14 @@
 
 		$searchResults = [];
 
-		// 获取最新评论作为“Trending”
 		$trending_comment = null;
 		$trend_sql = "
-			SELECT af.filmname AS id, c.segment, c.comment_text, TIME(c.created_at) AS time 
+			SELECT 
+				af.id AS film_id, 
+				af.filmname,      
+				c.segment, 
+				c.comment_text, 
+				TIME(c.created_at) AS time 
 			FROM comments c
 			JOIN allfilm af ON c.film_id = af.id
 			ORDER BY c.created_at DESC
@@ -162,7 +166,9 @@
 			<h3>Trending Comment</h3>
 			<div class="comment-box">
 				<?php if ($trending_comment): ?>
-					<strong><?php echo htmlspecialchars($trending_comment['id']); ?></strong><br>
+				<a href="movieinterface.php?id=<?php echo $trending_comment['film_id']; ?>" class="link">
+					<strong><?php echo htmlspecialchars($trending_comment['filmname']); ?></strong><br>
+				</a>
 					🕒 <?php echo htmlspecialchars($trending_comment['segment']); ?><br>
 					<p><?php echo htmlspecialchars($trending_comment['comment_text']); ?></p>
 				<?php else: ?>
